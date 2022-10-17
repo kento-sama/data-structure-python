@@ -14,11 +14,12 @@ class HeapTree:
         if self.tree:
             self.tree.append(new_val)
             current_index = len(self.tree) - 1
-            parent_index = (len(self.tree) // 2) - 1
-            while self.tree[current_index] > self.tree[parent_index] and parent_index >= 0:
-                self.tree[current_index], self.tree[parent_index] = self.tree[parent_index], self.tree[current_index]
-                current_index = parent_index
-                parent_index = ((current_index + 1) // 2) - 1
+            self.heapify(current_index)
+            # parent_index = (len(self.tree) // 2) - 1
+            # while self.tree[current_index] > self.tree[parent_index] and parent_index >= 0:
+            #     self.tree[current_index], self.tree[parent_index] = self.tree[parent_index], self.tree[current_index]
+            #     current_index = parent_index
+            #     parent_index = ((current_index + 1) // 2) - 1
         else:
             self.tree.append(new_val)
             
