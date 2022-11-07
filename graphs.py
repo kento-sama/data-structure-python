@@ -43,10 +43,11 @@ class Graph(object):
         """Don't return a list of edge objects!
         Return a list of triples that looks like this:
         (Edge Value, From Node Value, To Node Value)"""
-        edges = []
-        for edge in self.edges:
-            edges.append((edge.value, edge.node_from.value, edge.node_to.value))
-        return edges
+        # edges = []
+        # for edge in self.edges:
+        #     edges.append((edge.value, edge.node_from.value, edge.node_to.value))
+        # return edges
+        return [(e.value, e.node_from.value, e.node_to.value) for e in self.edges]
 
     def get_adjacency_list(self):
         """Don't return any Node or Edge objects!
